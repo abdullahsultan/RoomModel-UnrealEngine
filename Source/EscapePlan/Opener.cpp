@@ -20,9 +20,7 @@ void UOpener::BeginPlay()
 {
 	Super::BeginPlay();
 
-	// ...
-	Yaw = 90.0f;
-	
+	// ...	
 }
 
 
@@ -32,8 +30,8 @@ void UOpener::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponen
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 	UE_LOG(LogTemp, Warning, TEXT("In Opner \nName=%s \nRotation Yaw=%f"), *GetOwner()->GetName(), GetOwner()->GetActorRotation().Yaw);
 	float StartYaw = GetOwner()->GetActorRotation().Yaw;
-	FRotator Rotator = FRotator(0.0f, Yaw, 0.0f);
-	Rotator.Yaw =	FMath::Lerp(StartYaw, Yaw, 0.010f);
+	FRotator Rotator = FRotator(0.0f, 0.0f, 0.0f);
+	Rotator.Yaw = FMath::Lerp(StartYaw, TYaw, 1.0f * DeltaTime);
 	GetOwner()->SetActorRotation(Rotator);
 
 	// ...

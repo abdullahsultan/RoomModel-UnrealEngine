@@ -23,7 +23,8 @@ protected:
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-	float Yaw;
+	UPROPERTY(EditAnywhere)
+	float TYaw=90.0f;
 
 		
 };
